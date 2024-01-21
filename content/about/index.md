@@ -2,7 +2,7 @@
 title: "About Me"
 slug: "about"
 date: 2024-01-13T15:44:03-05:00
-draft: true
+draft: false
 ---
 
 "Your identity is not your "About Me" page. It's not your resume, or your job, or your relationship to other people...

@@ -8,7 +8,7 @@ tags:
     - "CNC"
     - "Fusion360"
     - "MPCNC"
-draft: true
+draft: false
 ---
 
 With a desire to film more projects, and an itch to test out the latest MPCNC reincarnation, I designed and machined a large camera arm based on an architect lamp.
