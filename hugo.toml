@@ -1,0 +1,43 @@
+baseURL = 'http://geoffinthegarage.com/'
+languageCode = 'en-us'
+title = 'Geoff in the Garage'
+theme = 'Mainroad'
+
+[Params]
+    mainSections = ["blog"]
+    dateformat = "Monday, Jan 2, 2006"
+    pager = false
+    readmore = false
+
+[Params.style.vars]
+    highlightColor = "#05af41"
+
+[Params.sidebar]
+    home = "right"
+    list = "right"
+    single = "right"
+    widgets = ["social", "categories", "taglist"]
+
+[Params.thumbnail]
+    visibility = ["list"]
+
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
+        weight = 1
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 5
+
+[[Params.widgets.social.custom]]
+  title = "YouTube"
+    url = "https://youtube.com/c/geoffworks17"
+    icon = "svg/youtube.svg" # Optional. Path relative to "layouts/partials"
+
+[Params.widgets.social]
+    instagram = "geoffinthegarage"
+    github = "geoffworks17"
