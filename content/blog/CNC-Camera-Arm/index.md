@@ -1,7 +1,9 @@
 ---
 title: "CNC Camera Arm"
 date: 2024-01-20T16:55:24-05:00
-thumbnail: "/blog/CNC-Camera-Arm/media/imagethumb.jpg"
+cover: "media/imagethumb.jpg"
+useRelativeCover: true
+showCoverInPost: false
 categories:
     - "Woodworking"
 tags:
