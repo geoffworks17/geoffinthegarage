@@ -1,7 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-thumbnail: "/blog/{{ .Name }}/media/imagethumb.png"
+cover: "media/_imagethumb.jpg"
+useRelativeCover: true
+showCoverInPost: false
 categories:
     - "_Category"
 tags:

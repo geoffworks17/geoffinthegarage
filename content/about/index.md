@@ -10,5 +10,3 @@ draft: false
 Your identity is a sick-ass hat everyone recognizes you by."
 
 ![hat](media/hat.jpg)
-
-...Hell yeah.
