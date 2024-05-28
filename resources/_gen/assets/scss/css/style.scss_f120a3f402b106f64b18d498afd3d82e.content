@@ -160,7 +160,7 @@ a.read-more:active {
   background: none;
   box-shadow: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 5px 0;
   font-weight: bold; }
 
 .code-toolbar {
@@ -590,7 +590,7 @@ h4:hover a {
   max-width: 800px;
   text-align: left;
   padding: 20px;
-  margin: 20px auto; }
+  margin: 0px auto; }
   @media (max-width: 900px) {
     .post {
       max-width: 660px; } }
@@ -604,7 +604,7 @@ h4:hover a {
         font-size: .85rem; } }
   .post-title {
     font-size: 2.625rem;
-    margin: 0 0 20px; }
+    margin: 0 0 5px; }
     @media (max-width: 684px) {
       .post-title {
         font-size: 2rem; } }
@@ -612,15 +612,15 @@ h4:hover a {
       text-decoration: none; }
   .post-tags {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 1rem;
     opacity: .5; }
     .post-tags a {
       text-decoration: none; }
   .post-content {
-    margin-top: 30px; }
+    margin-top: 15px; }
   .post-cover {
-    margin: 40px -00px;
+    margin: 20px -00px;
     width: 100%;
     max-width: 100%; }
     .post-cover img {
