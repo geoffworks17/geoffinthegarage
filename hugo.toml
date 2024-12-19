@@ -3,7 +3,7 @@ languageCode = "en-us"
 # Add it only if you keep the theme in the `themes` directory.
 # Remove it if you use the theme as a remote Hugo Module.
 theme = "hello-friend"
-paginate = 5
+paginate = 10
 
 [params]
   # dir name of your blog content (default is `content/posts`).
@@ -14,7 +14,7 @@ paginate = 5
   defaultTheme = ""
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 5
 
   # Show reading time in minutes for posts
   showReadingTime = false
@@ -25,7 +25,16 @@ paginate = 5
 
   # Show full page content in RSS feed items
   #(default is Description or Summary metadata in the front matter)
-  # rssFullText = true
+  rssFullText = true
+
+  [taxonomies]
+	  tag = "tags"
+	  category = "categories"
+    project = "projects"
+
+
+[outputs]
+  home = ["HTML", "RSS"]
 
 [languages]
   [languages.en]
@@ -55,6 +64,11 @@ paginate = 5
 
     [languages.en.menu]
       [[languages.en.menu.main]]
+        identifier = "projects"
+        name = "Projects"
+        url = "/projects"
+        weight = 1
+      [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
         url = "/about"
@@ -62,3 +76,8 @@ paginate = 5
         identifier = "archive"
         name = "Archive"
         url = "/archive"
+        weight =2
+      [[languages.en.menu.main]]
+        identifier = "rss"
+        name = "RSS"
+        url = "/index.xml"
