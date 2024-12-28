@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on </title>
+    <link>/categories/projects/</link>
+    <description>Recent content in Projects on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jun 2016 13:04:48 +0000</lastBuildDate><atom:link href="/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scanning Bones for 3D Printing</title>
+      <link>/blog/scanning-bones-for-3d-printing/</link>
+      <pubDate>Wed, 29 Jun 2016 13:04:48 +0000</pubDate>
+      
+      <guid>/blog/scanning-bones-for-3d-printing/</guid>
+      <description>In collaboration with my university&amp;rsquo;s anthropology department, I had the opportunity to scan skeleton fragments with the intent to 3d print copies. Yesterday, I finally got a sample scanned and printed.
+I placed the skull fragment on the rotating platform of a NextEngine 3d scanner, giving a full 360 degree view of the object. I did this twice at different orientations, and used the scanner software to fuse the scans together.</description>
+    </item>
+    
+    <item>
+      <title>Laser Mount for Classroom Use</title>
+      <link>/blog/laser-mount-for-classroom-use/</link>
+      <pubDate>Tue, 29 Mar 2016 10:46:00 +0000</pubDate>
+      
+      <guid>/blog/laser-mount-for-classroom-use/</guid>
+      <description>A friend of mine was in need of a set of cheap lasers for a class he was teaching on optics. Instead of using enclosed laser pointers that ran on obscure button cell batteries, he decided to purchase laser diodes and wire them for connection to a benchtop power supply. This allows for a more hands-on approach for the students, getting them more involved in the projects they are working on.</description>
+    </item>
+    
+    <item>
+      <title>Soda Cap</title>
+      <link>/blog/soda-cap/</link>
+      <pubDate>Sun, 17 Aug 2014 11:36:09 +0000</pubDate>
+      
+      <guid>/blog/soda-cap/</guid>
+      <description>A close friend works at a nearby bee farm, assembling and packing various products to ship out. This manufacturing involves a lot of dust floating around the production floor, and he asked if I could print something that would snap over his soda can to keep the stray particles out. I figured this was a perfect opportunity to practice some 3d CAD and get the printer going.
+I intended the first version to simply rotate around the top of the can, protecting the hole from dust.</description>
+    </item>
+    
+    <item>
+      <title>3d Scanner - MATLAB</title>
+      <link>/blog/3d-scanner-matlab/</link>
+      <pubDate>Fri, 09 May 2014 20:39:00 +0000</pubDate>
+      
+      <guid>/blog/3d-scanner-matlab/</guid>
+      <description>For a project in my computational physics class, I wanted to create something more than a program. With an old webcam, a pantry turntable, and a cheap laser, I figured I could use MATLAB&amp;rsquo;s image processing abilities to create proof-of-concept 3d scanner.
+By centering the object on the turntable, and projecting the laser line onto the object, I can use the camera to collect images while rotating the object at known intervals.</description>
+    </item>
+    
+    <item>
+      <title>Printrbot Simple Metal</title>
+      <link>/blog/printrbot-simple-metal/</link>
+      <pubDate>Mon, 21 Apr 2014 20:21:54 +0000</pubDate>
+      
+      <guid>/blog/printrbot-simple-metal/</guid>
+      <description>Here is my newly assembled Printrbot Simple Metal. I ordered the printer as a kit, and assembled it this past weekend. So far, it has proven to be a robust machine. Here is a time lapse of the build:</description>
+    </item>
+    
+  </channel>
+</rss>

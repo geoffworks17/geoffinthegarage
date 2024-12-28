@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laser on </title>
+    <link>/tags/laser/</link>
+    <description>Recent content in Laser on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Feb 2019 16:31:59 -0500</lastBuildDate><atom:link href="/tags/laser/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laser Engraver Testing</title>
+      <link>/projects/mpcnc/mpcnc-laser-engraver-testing/</link>
+      <pubDate>Mon, 11 Feb 2019 16:31:59 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-laser-engraver-testing/</guid>
+      <description>With the laser up and running, I wanted to try and dial in the settings to get good engravings and cut through some material. Most laser cutters are of the CO2 variety, which operate an order of magnitude faster than the MPCNC, and with two orders of magnitude more power.
+There are lots of forum posts about setups similar to mine, but no two machines are alike, so I had to figure out my own parameters.</description>
+    </item>
+    
+    <item>
+      <title>Laser Attachment</title>
+      <link>/projects/mpcnc/mpcnc-laser-attachment/</link>
+      <pubDate>Sat, 18 Aug 2018 16:31:03 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-laser-attachment/</guid>
+      <description>&lt;p&gt;There seems to be a proliferation of inexpensive diode lasers available from overseas ranging from 1 to 15 W. It is somewhat concerning that someone can purchase such a high powered blinding device so easily. It is also very tempting&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

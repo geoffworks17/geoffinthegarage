@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stickers on </title>
+    <link>/tags/stickers/</link>
+    <description>Recent content in Stickers on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jun 2018 16:29:39 -0500</lastBuildDate><atom:link href="/tags/stickers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pen Plotting and Vinyl Cuts</title>
+      <link>/projects/mpcnc/mpcnc-pen-and-vinyl/</link>
+      <pubDate>Mon, 04 Jun 2018 16:29:39 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-pen-and-vinyl/</guid>
+      <description>Now that the MPCNC is assembled and wired up, it&amp;rsquo;s time to make something! I decided to start with some simple actions with a pen plotter and vinyl cutter.
+Pen plotting For the first action, I went with a simple vector outline of a Gundam head. I found the above image as a black and grayscale png, and used Inkscape to trace the outline into black and white vector shapes. This was imported in Estlcam, which generated the gcode for this plot.</description>
+    </item>
+    
+  </channel>
+</rss>

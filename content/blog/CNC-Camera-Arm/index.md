@@ -1,11 +1,12 @@
 ---
 title: "CNC Camera Arm"
 date: 2024-01-20T16:55:24-05:00
-cover: "media/imagethumb.jpg"
-useRelativeCover: true
-showCoverInPost: false
+thumbnail:
+    src: "/blog/cnc-camera-arm/media/imagethumb.jpg"
+    visibility:
+        - list
 categories:
-    - "Woodworking"
+    - "Blog"
 tags:
     - "CNC"
     - "Fusion360"

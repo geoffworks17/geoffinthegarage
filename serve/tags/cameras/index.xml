@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cameras on </title>
+    <link>/tags/cameras/</link>
+    <description>Recent content in Cameras on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Dec 2020 12:18:38 -0500</lastBuildDate><atom:link href="/tags/cameras/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webcam Lens Modification</title>
+      <link>/blog/20-12-webcam-mod/</link>
+      <pubDate>Tue, 15 Dec 2020 12:18:38 -0500</pubDate>
+      
+      <guid>/blog/20-12-webcam-mod/</guid>
+      <description>&lt;p&gt;With the current state of mass telework and increased social distancing, finding new ways to connect with others over shared projects has become a necessary endeavor. This has lead me to upgrade my webcams, and use &lt;a href=&#34;https://obsproject.com/&#34;&gt;OBS&lt;/a&gt; to create a streaming setup to show-and-tell what I have been tinkering with.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Antares Launch</title>
+      <link>/blog/antares-launch/</link>
+      <pubDate>Sat, 03 Oct 2020 13:33:30 -0400</pubDate>
+      
+      <guid>/blog/antares-launch/</guid>
+      <description>This weekend, I got a chance to see the Antares rocket take off from Wallops Flight Facility. The facility is on the Atlantic coast of Maryland, and I am roughly 50 miles away on the west side of the Chesapeake. The mission was a resupply to the International Space Station, carrying cheese, nitrogen, and other essential items.
+Camera Setup My wife and I got out there early enough to get my camera setup, a simple tripod holding a Canon T3i with a 55-250mm zoom lens.</description>
+    </item>
+    
+    <item>
+      <title>Goin&#39; Walkabout and DSLRs</title>
+      <link>/blog/week-in-review-003/</link>
+      <pubDate>Sun, 31 May 2020 22:19:40 -0400</pubDate>
+      
+      <guid>/blog/week-in-review-003/</guid>
+      <description>This past week has been a bit slow. I have been preoccupied with a lot of work-related things, and was not in much of a mood to work on the usual hobbies of painting/printing/casting. While I may not have created too much, I spent a lot of time this week taking walks in the neighborhood. I suppose I could say this created a clear headspace from which to move into the next week.</description>
+    </item>
+    
+  </channel>
+</rss>

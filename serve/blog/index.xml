@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on </title>
+    <link>/blog/</link>
+    <description>Recent content in Blog on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 May 2024 18:36:36 -0400</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Battletech Display Terrace Part 2</title>
+      <link>/blog/battletech-display-terrace-pt-2/</link>
+      <pubDate>Sun, 26 May 2024 18:36:36 -0400</pubDate>
+      
+      <guid>/blog/battletech-display-terrace-pt-2/</guid>
+      <description>&lt;p&gt;I didn&amp;rsquo;t think I would be revisiting this project so soon, but the foam was already cut, and I filled up the first terrain piece with my entire collection of painted &amp;lsquo;Mechs. I also remembered to take more in-progress pictures, so there&amp;rsquo;s a bit more detail to the process.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Battletech Display Terrace</title>
+      <link>/blog/battletech-display-terrace/</link>
+      <pubDate>Fri, 24 May 2024 17:24:20 -0400</pubDate>
+      
+      <guid>/blog/battletech-display-terrace/</guid>
+      <description>&lt;p&gt;As my collection of 3d printed and purchased Battletech figures has grown, I needed a better way to display printed pieces. This homemade tiered shelf is what I came up with.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rav4 Roof Rack</title>
+      <link>/blog/rav4-roof-rack/</link>
+      <pubDate>Sat, 04 May 2024 15:25:06 -0400</pubDate>
+      
+      <guid>/blog/rav4-roof-rack/</guid>
+      <description>&lt;p&gt;I needed a way to transport plywood from the store back to my house using my Rav4. In the past, I have had the sheets cut small enough to load in the back of the car, but this time I wanted the freedom to cut it myself to my own specs.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CNC Camera Arm</title>
+      <link>/blog/cnc-camera-arm/</link>
+      <pubDate>Sat, 20 Jan 2024 16:55:24 -0500</pubDate>
+      
+      <guid>/blog/cnc-camera-arm/</guid>
+      <description>&lt;p&gt;With a desire to film more projects, and an itch to test out the latest MPCNC reincarnation, I designed and machined a large camera arm based on an architect lamp.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Webcam Lens Modification</title>
+      <link>/blog/20-12-webcam-mod/</link>
+      <pubDate>Tue, 15 Dec 2020 12:18:38 -0500</pubDate>
+      
+      <guid>/blog/20-12-webcam-mod/</guid>
+      <description>&lt;p&gt;With the current state of mass telework and increased social distancing, finding new ways to connect with others over shared projects has become a necessary endeavor. This has lead me to upgrade my webcams, and use &lt;a href=&#34;https://obsproject.com/&#34;&gt;OBS&lt;/a&gt; to create a streaming setup to show-and-tell what I have been tinkering with.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Antares Launch</title>
+      <link>/blog/antares-launch/</link>
+      <pubDate>Sat, 03 Oct 2020 13:33:30 -0400</pubDate>
+      
+      <guid>/blog/antares-launch/</guid>
+      <description>This weekend, I got a chance to see the Antares rocket take off from Wallops Flight Facility. The facility is on the Atlantic coast of Maryland, and I am roughly 50 miles away on the west side of the Chesapeake. The mission was a resupply to the International Space Station, carrying cheese, nitrogen, and other essential items.
+Camera Setup My wife and I got out there early enough to get my camera setup, a simple tripod holding a Canon T3i with a 55-250mm zoom lens.</description>
+    </item>
+    
+    <item>
+      <title>Image Scaling With Python</title>
+      <link>/blog/hugo-image-scaling-with-python/</link>
+      <pubDate>Tue, 29 Sep 2020 00:55:33 -0400</pubDate>
+      
+      <guid>/blog/hugo-image-scaling-with-python/</guid>
+      <description>This blog is built using Hugo, a static website generator designed for quick build times and easy deployment. A static website requires no server backend, since everything is delivered in a static state to the reader (that&amp;rsquo;s you!). All code is executed on the client machine. I love the lightweight simplicity of a static website, which brings up some nostalgia for the internet of the mid to late 90s, when these types of pages were the norm.</description>
+    </item>
+    
+    <item>
+      <title>Goin&#39; Walkabout and DSLRs</title>
+      <link>/blog/week-in-review-003/</link>
+      <pubDate>Sun, 31 May 2020 22:19:40 -0400</pubDate>
+      
+      <guid>/blog/week-in-review-003/</guid>
+      <description>This past week has been a bit slow. I have been preoccupied with a lot of work-related things, and was not in much of a mood to work on the usual hobbies of painting/printing/casting. While I may not have created too much, I spent a lot of time this week taking walks in the neighborhood. I suppose I could say this created a clear headspace from which to move into the next week.</description>
+    </item>
+    
+    <item>
+      <title>Painting Minis and More Casting</title>
+      <link>/blog/week-in-review-002/</link>
+      <pubDate>Sun, 24 May 2020 17:08:35 -0400</pubDate>
+      
+      <guid>/blog/week-in-review-002/</guid>
+      <description>This has been a week with a lot of painting, a little casting, and a bit of thinking about future projects.
+Painting Finished Tank Early in the week, I was able to wrap up my Schrek tank build, which gave me a chance to get some experience in basing. The base seen above was the third iteration, where I finally got the spacing between the dirt piles right. This allowed the tank sat on the base instead of floating above the rocks.</description>
+    </item>
+    
+    <item>
+      <title>Magnets, Casting, and Real Hobby Paint</title>
+      <link>/blog/week-in-review-001/</link>
+      <pubDate>Sun, 17 May 2020 06:21:02 -0400</pubDate>
+      
+      <guid>/blog/week-in-review-001/</guid>
+      <description>It&amp;rsquo;s been a pretty productive week, and I got a chance to try out a bunch of new things and get some ideas for future projects a bit outside my norm. Here&amp;rsquo;s a quick recap of what I&amp;rsquo;ve been up to this week:
+Magnets, Painting with Vallejo, and Basing To make my growing Battletech collection a bit more modular (and to keep from making/buying too many minis) I have been toying with the idea of swappable turrets and weapons for my pieces.</description>
+    </item>
+    
+    <item>
+      <title>Two Part Mold Making</title>
+      <link>/blog/two-part-mold-making/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/two-part-mold-making/</guid>
+      <description>Today, we&amp;rsquo;re going to take a 3d printed tabletop miniature and replicate it with a two part mold. This will speed of production of a part that would normally take two to three hours, and give us the freedom of different materials and colors.
+Two part molds allow us to cast more complex shapes than a one part, or open-face, mold. This open face creates a flat surface on the piece we are making.</description>
+    </item>
+    
+    <item>
+      <title>Cosplay Blaster</title>
+      <link>/blog/cosplay-blaster/</link>
+      <pubDate>Wed, 14 Feb 2018 15:48:33 -0500</pubDate>
+      
+      <guid>/blog/cosplay-blaster/</guid>
+      <description>&lt;p&gt;A friend of mine recently joined the 501st, a group of Star Wars fans who cosplay in full sets of screen-accurate Stormtrooper armor for charity events. He opted for a biker scout variant, which includes a distinct laser pistol as a sidearm.&lt;/p&gt;
+&lt;p&gt;To help complete his set of armor, I printed a replica of this blaster.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Home Mini Wall Mount</title>
+      <link>/blog/google-home-mini-wall-mount/</link>
+      <pubDate>Tue, 23 Jan 2018 12:12:12 +0000</pubDate>
+      
+      <guid>/blog/google-home-mini-wall-mount/</guid>
+      <description>Over Christmas, I took advantage of Google&amp;rsquo;s sale on the Google Home Mini to pick up a few for the apartment. Even though it doesn&amp;rsquo;t take up a lot of desk space, I wanted to mount it to the wall to keep it off the limited shelf space, and to hear it throughout the room. To resolve this, I came up with the following wall mount. The design started with a few reference images I found online.</description>
+    </item>
+    
+    <item>
+      <title>Batch-Converting Video Files with Handbrake and Python</title>
+      <link>/blog/batch-converting-video-files-with-handbrake-and-python/</link>
+      <pubDate>Sun, 07 Aug 2016 19:35:17 +0000</pubDate>
+      
+      <guid>/blog/batch-converting-video-files-with-handbrake-and-python/</guid>
+      <description>Over the past few years, I have acquired quite a video collection. Hundreds of files have been downloaded or DVDs ripped, resulting in nearly a terabyte of television and movies. I usually use Handbrake to rip files off a DVD, since it has several parameters that can be tweaked to give the ideal video output. I can easily name the file, specify an output format, and even create a queue for getting multiple videos from a disk.</description>
+    </item>
+    
+    <item>
+      <title>Ikea Lamp to Camera Mount</title>
+      <link>/blog/ikea-lamp-to-camera-mount/</link>
+      <pubDate>Thu, 28 Jul 2016 02:43:28 +0000</pubDate>
+      
+      <guid>/blog/ikea-lamp-to-camera-mount/</guid>
+      <description>At less than $10, the Tertial lamp from Ikea is my favorite source of workspace illumination. So far, I have one in the garage over my workbench, and one over the desk in my office. They are easy to move into place, and will hold fast when let go. For the price, this lamp can&amp;rsquo;t be beat. The mechanics of these lamps is also interesting. Forces and torques are balanced through the weight of the lamp and counter-acting springs.</description>
+    </item>
+    
+    <item>
+      <title>Scanning Bones for 3D Printing</title>
+      <link>/blog/scanning-bones-for-3d-printing/</link>
+      <pubDate>Wed, 29 Jun 2016 13:04:48 +0000</pubDate>
+      
+      <guid>/blog/scanning-bones-for-3d-printing/</guid>
+      <description>In collaboration with my university&amp;rsquo;s anthropology department, I had the opportunity to scan skeleton fragments with the intent to 3d print copies. Yesterday, I finally got a sample scanned and printed.
+I placed the skull fragment on the rotating platform of a NextEngine 3d scanner, giving a full 360 degree view of the object. I did this twice at different orientations, and used the scanner software to fuse the scans together.</description>
+    </item>
+    
+    <item>
+      <title>Printrbot Simple Metal Upgrade</title>
+      <link>/blog/printrbot-simple-metal-upgrade/</link>
+      <pubDate>Sun, 26 Jun 2016 12:20:21 +0000</pubDate>
+      
+      <guid>/blog/printrbot-simple-metal-upgrade/</guid>
+      <description>Though I received it weeks ago, I finally got a chance to install the x-axis upgrade for my Printrbot. I now have 4 more inches in the x direction, and a heated build plate.
+I also installed a new Ubis13 hotend to replace the offbrand E3DV6 that leaked all over the place. This required printing a new fan mount, which you can see coming off the hotend in the picture. I&amp;rsquo;m looking forward to printing with new materials and making use of the extra space.</description>
+    </item>
+    
+    <item>
+      <title>Reviving an Old Powderbed Printer</title>
+      <link>/blog/reviving-an-old-powderbed-printer/</link>
+      <pubDate>Tue, 31 May 2016 10:55:00 +0000</pubDate>
+      
+      <guid>/blog/reviving-an-old-powderbed-printer/</guid>
+      <description>A little over a year ago, our group acquired this old ZCorp 310 printer from surplus. This machine uses powderbed technology, where an inkjet deposits liquid binder on a plaster material, fusing it together into a solid object. This brand of printer is rarely seen nowadays, since the company is now owned by 3D Systems. With no material, no accessories, and no software, we were unsure if it was even functional.</description>
+    </item>
+    
+    <item>
+      <title>Filament Extrusion</title>
+      <link>/blog/filament-extrusion/</link>
+      <pubDate>Tue, 10 May 2016 03:13:22 +0000</pubDate>
+      
+      <guid>/blog/filament-extrusion/</guid>
+      <description>Despite the wide range of available thermoplastics, sometimes spools of filament with desirable electromagnetic or mechanical properties are not commercially available. For this reason, our research group acquired a Filabot filament extruder. Pellets of thermoplastic are loaded in through the hopper, and pushed through a heating element via an auger. The nozzles are bolts with different sized holes for 3 mm and 1.75 mm filament.
+Today I got a chance to make some filament.</description>
+    </item>
+    
+    <item>
+      <title>Laser Mount for Classroom Use</title>
+      <link>/blog/laser-mount-for-classroom-use/</link>
+      <pubDate>Tue, 29 Mar 2016 10:46:00 +0000</pubDate>
+      
+      <guid>/blog/laser-mount-for-classroom-use/</guid>
+      <description>A friend of mine was in need of a set of cheap lasers for a class he was teaching on optics. Instead of using enclosed laser pointers that ran on obscure button cell batteries, he decided to purchase laser diodes and wire them for connection to a benchtop power supply. This allows for a more hands-on approach for the students, getting them more involved in the projects they are working on.</description>
+    </item>
+    
+    <item>
+      <title>CT Scan to STL</title>
+      <link>/blog/ct-scan-to-stl/</link>
+      <pubDate>Sat, 27 Feb 2016 12:15:24 +0000</pubDate>
+      
+      <guid>/blog/ct-scan-to-stl/</guid>
+      <description>Recently, I have been reading on 3d printing in the medical field. The ability to go beyond a screen allows for visualization and practice of surgery without the patient having to go under the knife. A friend was kind enough to get me a copy of her recent CT scan data so I could attempt to get a 3d-printable object out of it. Using the guide found here, I had little trouble extracting the data, generating a model, and exporting it to an STL file.</description>
+    </item>
+    
+    <item>
+      <title>New Nozzle Under The Microscope</title>
+      <link>/blog/new-nozzle-under-the-microscope/</link>
+      <pubDate>Fri, 26 Feb 2016 10:36:13 +0000</pubDate>
+      
+      <guid>/blog/new-nozzle-under-the-microscope/</guid>
+      <description>I picked up a new hot end for the Printrbot the other day. This one is modeled after the popular E3D V6 hot end, which has an all-metal design. Unfortunatly, you get what you pay for, and this inexpensive clone oozed out the top and bottom of the heater block. Lesson learned, buy the official tried-and-true equipment. While I was heating things up to remove the stray PLA, I was able to use one of the microscopes in the lab to check out the new 0.</description>
+    </item>
+    
+    <item>
+      <title>Silicon Cell Print</title>
+      <link>/blog/silicon-cell-print/</link>
+      <pubDate>Mon, 09 Nov 2015 13:04:10 +0000</pubDate>
+      
+      <guid>/blog/silicon-cell-print/</guid>
+      <description>For a demonstration piece, I was sent a model of a silicon unit cell to print. This was an enjoyable endeavor, and lead to an interesting discovery in the post-processing procedure on the Form1+
+I ended up printing two of these. One was left in the alcohol bath for 2 days, and when removed, was extremely flexible. While I need to be careful with the timing, the flex should make it more resistant to cracking, especially if the unit cell is being passed around during a demonstration.</description>
+    </item>
+    
+    <item>
+      <title>Logo Print</title>
+      <link>/blog/logo-print/</link>
+      <pubDate>Mon, 15 Dec 2014 15:49:29 +0000</pubDate>
+      
+      <guid>/blog/logo-print/</guid>
+      <description>&lt;p&gt;The other day, I was tasked with 3d printing a logo from a nearby company. The design was a simple compass with a superimposed letter &amp;ldquo;e.&amp;rdquo; Being such a simple design, I decided to model it directly in AutoDesk Inventor.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Soda Cap</title>
+      <link>/blog/soda-cap/</link>
+      <pubDate>Sun, 17 Aug 2014 11:36:09 +0000</pubDate>
+      
+      <guid>/blog/soda-cap/</guid>
+      <description>A close friend works at a nearby bee farm, assembling and packing various products to ship out. This manufacturing involves a lot of dust floating around the production floor, and he asked if I could print something that would snap over his soda can to keep the stray particles out. I figured this was a perfect opportunity to practice some 3d CAD and get the printer going.
+I intended the first version to simply rotate around the top of the can, protecting the hole from dust.</description>
+    </item>
+    
+    <item>
+      <title>3d Scanner - MATLAB</title>
+      <link>/blog/3d-scanner-matlab/</link>
+      <pubDate>Fri, 09 May 2014 20:39:00 +0000</pubDate>
+      
+      <guid>/blog/3d-scanner-matlab/</guid>
+      <description>For a project in my computational physics class, I wanted to create something more than a program. With an old webcam, a pantry turntable, and a cheap laser, I figured I could use MATLAB&amp;rsquo;s image processing abilities to create proof-of-concept 3d scanner.
+By centering the object on the turntable, and projecting the laser line onto the object, I can use the camera to collect images while rotating the object at known intervals.</description>
+    </item>
+    
+    <item>
+      <title>Printrbot Simple Metal</title>
+      <link>/blog/printrbot-simple-metal/</link>
+      <pubDate>Mon, 21 Apr 2014 20:21:54 +0000</pubDate>
+      
+      <guid>/blog/printrbot-simple-metal/</guid>
+      <description>Here is my newly assembled Printrbot Simple Metal. I ordered the printer as a kit, and assembled it this past weekend. So far, it has proven to be a robust machine. Here is a time lapse of the build:</description>
+    </item>
+    
+  </channel>
+</rss>

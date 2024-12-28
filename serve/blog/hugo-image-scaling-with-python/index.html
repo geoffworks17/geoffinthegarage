@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image Scaling With Python - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Geoff in the Garage" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Geoff in the Garage</div>
+					<div class="logo__tagline">OK, maybe not *every* day...</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/blog/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://geoffinthegarage.bigcartel.com/">
+				
+				<span class="menu__text">Shop</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Image Scaling With Python</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-29T00:55:33-04:00">Tuesday, Sep 29, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>This blog is built using Hugo, a static website generator designed for quick build times and easy deployment. A static website requires no server backend, since everything is delivered in a <em>static</em> state to the reader (that&rsquo;s you!). All code is executed on the client machine. I love the lightweight simplicity of a static website, which brings up some nostalgia for the internet of the mid to late 90s, when these types of pages were the norm.</p>
+<p>As I work on this blog, I find myself doing a lot of background tasks over and over again. The most time consuming is editing pictures. This page outlines the challenges and benefits of using low resolution images in this blog, along with a script I have written to streamline the editing process.</p>
+<h2 id="saving-space">Saving Space</h2>
+<p><img src="media/FullWithInset.jpg#center" alt="Sate">
+The image above might be the largest file on this site, a whopping 1.94 MB. Compared with most of the pictures I take with my camera or phone, this is one of the smaller ones. The average image size from my devices is about 4-5 MB. If I were to use these full resolution images, a single webpage could balloon up to nearly 50 MB. I pity the poor soul that tries to load up a 50 MB page on mobile data.</p>
+<p>To save on space, each jpeg is scaled down so that the largest dimension is 1000px, and the quality is lowered from 95 to 75. This result is a huge reduction in file size. The scaled image is displayed below:
+<img src="media/Scaled.jpg#center" alt="Scaled">
+The scaled and reduced quality image takes up 46 KB. This is roughly 2.5% the original filesize, and much more reasonable to serve on a static page.</p>
+<p>Here is a 400% zoom of the original image with an overlay of the edited version. Can you see where the image quality suffers?
+<img src="media/InsetZoom.jpg#center" alt="Inset">
+Looking closely, one might see a faint separation line running horizontal though the bottom of the diagonal strap buckle. Everything above is the original image, and everything below has been scaled down and compressed. There are a few artifacts in the empty spaces between the arms, but I cannot tell the difference when zoomed at 100%. Since the image still conveys the necessary information to support the page content, this is a great trade-off.</p>
+<p>Scaling, adjusting quality, and renaming the files takes a good bit of time when I am putting together a page for the site. It is tedious, monotonous work that is ripe for automation.</p>
+<h2 id="automate-the-boring-stuff">Automate the Boring Stuff</h2>
+<p>Whenever I am faced with the challenge of writing some script to speed things up, I always consider this post from <a href="http://www.xkcd.com/">xkcd</a>:
+<img src="https://imgs.xkcd.com/comics/automation.png#center" alt="Automation">
+It is easy to fall into the efficiency trap and lose sight of the original task. Fortunately, I only got bogged down in debugging for a few hours over the weekend. Since this script will help me get more posts written and live, it was a worthy investment of time.</p>
+<p>There is a lot of community support for python&rsquo;s Pillow image processing library, so I based my script around its functions.</p>
+<h3 id="get-current-folder-name-and-generate-file-prefix">Get current folder name and generate file prefix</h3>
+<p>Before I start a new post, I collect relevant pictures into folders to help organize my thoughts. These folders are named with the month number, and a few words to describe the overall project or subject (&ldquo;05 Generic Project Name&rdquo;). The following snippet collects the all the files within a folder, and uses the folder name to generate a somewhat unique prefix for the images (05gpn). It also builds a list of suffixes so I can easily number the images.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cwd <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getcwd()
+</span></span><span style="display:flex;"><span>folder <span style="color:#f92672">=</span> cwd<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>folder <span style="color:#f92672">=</span> folder<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>prefix <span style="color:#f92672">=</span> folder[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> each <span style="color:#f92672">in</span> folder:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> each <span style="color:#f92672">!=</span> prefix:
+</span></span><span style="display:flex;"><span>        prefix <span style="color:#f92672">+=</span> each[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>suffix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;01&#34;</span>, <span style="color:#e6db74">&#34;02&#34;</span>, <span style="color:#e6db74">&#34;03&#34;</span>, <span style="color:#e6db74">&#34;04&#34;</span>, <span style="color:#e6db74">&#34;05&#34;</span>, <span style="color:#e6db74">&#34;06&#34;</span>, <span style="color:#e6db74">&#34;07&#34;</span>, <span style="color:#e6db74">&#34;08&#34;</span>, <span style="color:#e6db74">&#34;09&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    suffix<span style="color:#f92672">.</span>append(str(i))</span></span></code></pre></div>
+<p>For the last part, I could have written a clever bit of code to append &ldquo;0&rdquo; to digits 1..9, but this brings me back to the comic above. I did not want to fall into the &ldquo;Rethinking&rdquo; and &ldquo;Ongoing Development&rdquo; part of the graph&hellip;</p>
+<h3 id="parse-file-list-and-apply-scale-and-quality-reduction">Parse file list, and apply scale and quality reduction</h3>
+<p>The next bit of code sifts through the filelist, removing anything with a &ldquo;jpg&rdquo; or &ldquo;png&rdquo; extension. I added the &ldquo;item.lower()&rdquo; to account for inconsistent case with extensions (&ldquo;jpg&rdquo; vs &ldquo;JPG&rdquo; are treated equally).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>filelist <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(cwd)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> filelist[:]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span>(item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.png&#34;</span>) <span style="color:#f92672">or</span> item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.jpg&#34;</span>)):
+</span></span><span style="display:flex;"><span>            filelist<span style="color:#f92672">.</span>remove(item)</span></span></code></pre></div>
+<p>The script then iterates though the list of images, scaling them down. The if/else statement swaps the resize(x, y) arguments to account for portrait or landscape pictures. Lastly, tt will rename the files to a more manageable convention for hand typing, and saves them all to the specified quality.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> item, name <span style="color:#f92672">in</span> zip(filelist, suffix):
+</span></span><span style="display:flex;"><span>    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>item)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get image size to determine scaling</span>
+</span></span><span style="display:flex;"><span>    size <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>size
+</span></span><span style="display:flex;"><span>    dim <span style="color:#f92672">=</span> (min(size) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>) <span style="color:#f92672">/</span> max(size)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> max(size) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1000</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> size[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> max(size):
+</span></span><span style="display:flex;"><span>            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((<span style="color:#ae81ff">1000</span>,int(dim)), Image<span style="color:#f92672">.</span>ANTIALIAS)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((int(dim), <span style="color:#ae81ff">1000</span>), Image<span style="color:#f92672">.</span>ANTIALIAS)
+</span></span><span style="display:flex;"><span>    filetype <span style="color:#f92672">=</span> item<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> filetype <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;png&#39;</span>:
+</span></span><span style="display:flex;"><span>        img<span style="color:#f92672">.</span>save(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>prefix<span style="color:#f92672">+</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.png&#34;</span>, <span style="color:#e6db74">&#39;png&#39;</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">75</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        img<span style="color:#f92672">.</span>save(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>prefix<span style="color:#f92672">+</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.jpg&#34;</span>, <span style="color:#e6db74">&#39;jpeg&#39;</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">75</span>)</span></span></code></pre></div>
+<h2 id="end-result">End Result</h2>
+<p>Putting it all together, the complete script is below. It runs on every jpg and png in the working directory in which it is called.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get current folder name and generate file prefix</span>
+</span></span><span style="display:flex;"><span>cwd <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getcwd()
+</span></span><span style="display:flex;"><span>folder <span style="color:#f92672">=</span> cwd<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>folder <span style="color:#f92672">=</span> folder<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>prefix <span style="color:#f92672">=</span> folder[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> each <span style="color:#f92672">in</span> folder:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> each <span style="color:#f92672">!=</span> prefix:
+</span></span><span style="display:flex;"><span>        prefix <span style="color:#f92672">+=</span> each[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Image prefix is: &#34;</span> <span style="color:#f92672">+</span> prefix)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generate suffix 01, 02, 03...</span>
+</span></span><span style="display:flex;"><span>suffix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;01&#34;</span>, <span style="color:#e6db74">&#34;02&#34;</span>, <span style="color:#e6db74">&#34;03&#34;</span>, <span style="color:#e6db74">&#34;04&#34;</span>, <span style="color:#e6db74">&#34;05&#34;</span>, <span style="color:#e6db74">&#34;06&#34;</span>, <span style="color:#e6db74">&#34;07&#34;</span>, <span style="color:#e6db74">&#34;08&#34;</span>, <span style="color:#e6db74">&#34;09&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    suffix<span style="color:#f92672">.</span>append(str(i))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List of included image files</span>
+</span></span><span style="display:flex;"><span>filelist <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(cwd)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> filelist[:]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span>(item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.png&#34;</span>) <span style="color:#f92672">or</span> item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.jpg&#34;</span>)):
+</span></span><span style="display:flex;"><span>            filelist<span style="color:#f92672">.</span>remove(item)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> item, name <span style="color:#f92672">in</span> zip(filelist, suffix):
+</span></span><span style="display:flex;"><span>    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>item)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get image size to determine scaling</span>
+</span></span><span style="display:flex;"><span>    size <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>size
+</span></span><span style="display:flex;"><span>    dim <span style="color:#f92672">=</span> (min(size) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>) <span style="color:#f92672">/</span> max(size)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> max(size) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1000</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> size[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> max(size):
+</span></span><span style="display:flex;"><span>            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((<span style="color:#ae81ff">1000</span>,int(dim)), Image<span style="color:#f92672">.</span>ANTIALIAS)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((int(dim), <span style="color:#ae81ff">1000</span>), Image<span style="color:#f92672">.</span>ANTIALIAS)
+</span></span><span style="display:flex;"><span>    filetype <span style="color:#f92672">=</span> item<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> filetype <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;png&#39;</span>:
+</span></span><span style="display:flex;"><span>        img<span style="color:#f92672">.</span>save(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>prefix<span style="color:#f92672">+</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.png&#34;</span>, <span style="color:#e6db74">&#39;png&#39;</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">75</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        img<span style="color:#f92672">.</span>save(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>prefix<span style="color:#f92672">+</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.jpg&#34;</span>, <span style="color:#e6db74">&#39;jpeg&#39;</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">75</span>)</span></span></code></pre></div>
+<p>It might not be that pretty, but it gets the job done and gets me back to making and writing.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/programming/" rel="tag">Programming</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hugo/" rel="tag">Hugo</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/portfolio/" rel="tag">Portfolio</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/blog/week-in-review-003/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Goin&#39; Walkabout and DSLRs</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/blog/antares-launch/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Antares Launch</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/geoffworks17" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="YouTube"  rel="noopener noreferrer" href="https://youtube.com/c/geoffworks17" target="_blank">
+					<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="youtube.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="0 0 384 374"
+   height="24"
+   width="24"
+   class="widget-social__link-icon  icon">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     showguides="false"
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:cy="12"
+     inkscape:cx="12"
+     inkscape:zoom="42"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="2080"
+     inkscape:window-width="3840"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:60.4723"
+     id="path2"
+     fill="#ffffff"
+     d="M 146.30566,311.1838 C 89.713787,309.97435 50.934056,306.92292 38.712799,302.71811 24.384991,297.78866 12.673995,285.76151 8.2619073,271.44526 -0.17501416,244.06924 -2.6466196,166.85265 3.170545,112.38332 6.2647626,83.410473 10.14127,72.984254 21.933402,61.918892 29.649619,54.678233 37.418646,51.09572 49.617087,49.153171 91.447611,42.491849 225.37148,40.873994 301.74679,46.107368 c 39.23234,2.688231 50.21728,5.788642 61.8988,17.470071 8.15737,8.157313 11.85096,16.065295 14.66051,31.387971 8.33057,45.43333 7.35575,136.84729 -1.84803,173.28972 -4.31411,17.08184 -15.57746,29.50053 -31.64989,34.89629 -15.66161,5.25805 -77.54865,8.53462 -156.43876,8.28306 -19.61121,-0.0605 -38.53993,-0.17537 -42.06382,-0.24794 z m 57.71837,-105.06256 c 27.35151,-15.70421 49.55977,-28.71988 49.35167,-28.92361 -0.51825,-0.50797 -97.88447,-56.66664 -98.96406,-57.08094 -0.77605,-0.29631 -0.86319,5.46729 -0.86319,57.11323 0,31.59443 0.16751,57.44443 0.37251,57.44443 0.20501,0 22.7513,-12.8489 50.10282,-28.55311 z" />
+</svg>
+
+				<span>YouTube</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/3d-printing/" title="3d Printing">3d Printing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/action-figures/" title="Action Figures">Action Figures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/battletech/" title="Battletech">Battletech</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cameras/" title="Cameras">Cameras</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/car/" title="Car">Car</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/casting/" title="Casting">Casting</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cnc/" title="CNC">CNC</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cosplay/" title="Cosplay">Cosplay</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fusion360/" title="Fusion360">Fusion360</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/laser/" title="Laser">Laser</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mpcnc/" title="MPCNC">MPCNC</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/optics/" title="Optics">Optics</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/painting/" title="Painting">Painting</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/portfolio/" title="Portfolio">Portfolio</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/programming/" title="Programming">Programming</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/resin/" title="Resin">Resin</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/space/" title="Space">Space</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/stickers/" title="Stickers">Stickers</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tabletop/" title="Tabletop">Tabletop</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/terrain/" title="Terrain">Terrain</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/walking/" title="Walking">Walking</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

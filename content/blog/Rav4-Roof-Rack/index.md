@@ -1,15 +1,17 @@
 ---
 title: "Rav4 Roof Rack"
 date: 2024-05-04T15:25:06-04:00
-cover: "media/imagethumb.jpg"
-useRelativeCover: true
-showCoverInPost: false
+thumbnail:
+    src: "/blog/rav4-roof-rack/media/image07.jpg"
+    visibility:
+        - list
 categories:
     - "woodworking"
 tags:
     - "Car"
 draft: false
 ---
+
 I needed a way to transport plywood from the store back to my house using my Rav4. In the past, I have had the sheets cut small enough to load in the back of the car, but this time I wanted the freedom to cut it myself to my own specs. 
 
 <!--more-->

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on </title>
+    <link>/tags/programming/</link>
+    <description>Recent content in Programming on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Sep 2020 00:55:33 -0400</lastBuildDate><atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image Scaling With Python</title>
+      <link>/blog/hugo-image-scaling-with-python/</link>
+      <pubDate>Tue, 29 Sep 2020 00:55:33 -0400</pubDate>
+      
+      <guid>/blog/hugo-image-scaling-with-python/</guid>
+      <description>This blog is built using Hugo, a static website generator designed for quick build times and easy deployment. A static website requires no server backend, since everything is delivered in a static state to the reader (that&amp;rsquo;s you!). All code is executed on the client machine. I love the lightweight simplicity of a static website, which brings up some nostalgia for the internet of the mid to late 90s, when these types of pages were the norm.</description>
+    </item>
+    
+    <item>
+      <title>Batch-Converting Video Files with Handbrake and Python</title>
+      <link>/blog/batch-converting-video-files-with-handbrake-and-python/</link>
+      <pubDate>Sun, 07 Aug 2016 19:35:17 +0000</pubDate>
+      
+      <guid>/blog/batch-converting-video-files-with-handbrake-and-python/</guid>
+      <description>Over the past few years, I have acquired quite a video collection. Hundreds of files have been downloaded or DVDs ripped, resulting in nearly a terabyte of television and movies. I usually use Handbrake to rip files off a DVD, since it has several parameters that can be tweaked to give the ideal video output. I can easily name the file, specify an output format, and even create a queue for getting multiple videos from a disk.</description>
+    </item>
+    
+    <item>
+      <title>3d Scanner - MATLAB</title>
+      <link>/blog/3d-scanner-matlab/</link>
+      <pubDate>Fri, 09 May 2014 20:39:00 +0000</pubDate>
+      
+      <guid>/blog/3d-scanner-matlab/</guid>
+      <description>For a project in my computational physics class, I wanted to create something more than a program. With an old webcam, a pantry turntable, and a cheap laser, I figured I could use MATLAB&amp;rsquo;s image processing abilities to create proof-of-concept 3d scanner.
+By centering the object on the turntable, and projecting the laser line onto the object, I can use the camera to collect images while rotating the object at known intervals.</description>
+    </item>
+    
+  </channel>
+</rss>

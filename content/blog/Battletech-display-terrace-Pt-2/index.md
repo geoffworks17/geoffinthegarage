@@ -1,9 +1,10 @@
 ---
 title: "Battletech Display Terrace Part 2"
 date: 2024-05-26T18:36:36-04:00
-cover: "media/_imagethumb.jpg"
-useRelativeCover: true
-showCoverInPost: false
+thumbnail:
+    src: "/blog/battletech-display-terrace-pt-2/media/_image15.jpg"
+    visibility:
+        - list
 categories:
     - "Tabletop Wargaming"
 tags:

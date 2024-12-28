@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MPCNC on </title>
+    <link>/tags/mpcnc/</link>
+    <description>Recent content in MPCNC on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jan 2024 16:55:24 -0500</lastBuildDate><atom:link href="/tags/mpcnc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CNC Camera Arm</title>
+      <link>/blog/cnc-camera-arm/</link>
+      <pubDate>Sat, 20 Jan 2024 16:55:24 -0500</pubDate>
+      
+      <guid>/blog/cnc-camera-arm/</guid>
+      <description>&lt;p&gt;With a desire to film more projects, and an itch to test out the latest MPCNC reincarnation, I designed and machined a large camera arm based on an architect lamp.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EVA Spoilboard</title>
+      <link>/projects/mpcnc/mpcnc-eva-spoilboard/</link>
+      <pubDate>Tue, 01 Dec 2020 12:16:06 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-eva-spoilboard/</guid>
+      <description>&lt;p&gt;I have been thinking about this project for a long time. After I started using the needle cutter, I really wanted a vacuum table that could flatten the foamboard, and an underlying work surface that would not destroy the cutting tool.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting Better</title>
+      <link>/projects/mpcnc/mpcnc-getting-better/</link>
+      <pubDate>Sat, 14 Nov 2020 10:15:20 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-getting-better/</guid>
+      <description>&lt;p&gt;After a two week hiatus from the MPCNC, I got the itch to get back to making things. I wanted to salvage the spoilboard as much as I could, level it out, and create a few clamps to make workpiece holding a little easier.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Making a Spoilboard and Breaking Things</title>
+      <link>/projects/mpcnc/mpcnc-spoilboard/</link>
+      <pubDate>Sun, 25 Oct 2020 08:17:37 -0400</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-spoilboard/</guid>
+      <description>In the process of creating a spoilboard for the MPCNC, I came across several lingering issues with the machine that needed to be resolved. It ended up being an opportunity to correct a bunch of broken bits, tighten up nuts and bolts that had loosened, and come to terms with an accuracy problem I had been ignoring.
+This project also gave me a chance to try a new method of documentation, and learn a lot about what works and doesn&amp;rsquo;t work for my creative workflow.</description>
+    </item>
+    
+    <item>
+      <title>Router Upgrade</title>
+      <link>/projects/mpcnc/mpcnc-router-upgrade/</link>
+      <pubDate>Wed, 14 Oct 2020 06:45:01 -0400</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-router-upgrade/</guid>
+      <description>After a few years of rebuilds, teardowns, and tool changes, I am finally adding a router to my MPCNC. I have been wanting to work more with sheet material like wood, acrylic, and even aluminum if I can get the hang of using this tool.
+Router Choice and Prints For a router, V1 Engineering recommend the Dewalt 660, a 5.0 Amp, handheld rotary tool that operates at 30,000 rpm with an included 1/8&amp;quot; collet.</description>
+    </item>
+    
+    <item>
+      <title>Needle Cutter Rebuild</title>
+      <link>/projects/mpcnc/mpcnc-rebuild-with-needle-cutter/</link>
+      <pubDate>Mon, 17 Feb 2020 16:36:06 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-rebuild-with-needle-cutter/</guid>
+      <description>&lt;p&gt;After a hiatus, I decided to revisit the needle cutter and get back to making planes from the free svg plans on FliteTest. I wanted to characterize the performance of the MPCNC and develop a streamlined workflow for creating parts that would fit together snug without being too tight.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laser Engraver Testing</title>
+      <link>/projects/mpcnc/mpcnc-laser-engraver-testing/</link>
+      <pubDate>Mon, 11 Feb 2019 16:31:59 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-laser-engraver-testing/</guid>
+      <description>With the laser up and running, I wanted to try and dial in the settings to get good engravings and cut through some material. Most laser cutters are of the CO2 variety, which operate an order of magnitude faster than the MPCNC, and with two orders of magnitude more power.
+There are lots of forum posts about setups similar to mine, but no two machines are alike, so I had to figure out my own parameters.</description>
+    </item>
+    
+    <item>
+      <title>Laser Attachment</title>
+      <link>/projects/mpcnc/mpcnc-laser-attachment/</link>
+      <pubDate>Sat, 18 Aug 2018 16:31:03 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-laser-attachment/</guid>
+      <description>&lt;p&gt;There seems to be a proliferation of inexpensive diode lasers available from overseas ranging from 1 to 15 W. It is somewhat concerning that someone can purchase such a high powered blinding device so easily. It is also very tempting&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pen Plotting and Vinyl Cuts</title>
+      <link>/projects/mpcnc/mpcnc-pen-and-vinyl/</link>
+      <pubDate>Mon, 04 Jun 2018 16:29:39 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-pen-and-vinyl/</guid>
+      <description>Now that the MPCNC is assembled and wired up, it&amp;rsquo;s time to make something! I decided to start with some simple actions with a pen plotter and vinyl cutter.
+Pen plotting For the first action, I went with a simple vector outline of a Gundam head. I found the above image as a black and grayscale png, and used Inkscape to trace the outline into black and white vector shapes. This was imported in Estlcam, which generated the gcode for this plot.</description>
+    </item>
+    
+    <item>
+      <title>Garage Resize</title>
+      <link>/projects/mpcnc/mpcnc-garage-resize/</link>
+      <pubDate>Sun, 06 May 2018 16:28:33 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-garage-resize/</guid>
+      <description>Soon after finishing the initial build, which was significantly scaled down from my original plans, a garage unit opened up in my apartment. I had been keeping an eye out for this, so I leased one, and moved some things down to set up a small shop.
+I used this newly acquired space to scale the MPCNC up to it&amp;rsquo;s intended size; a 2&amp;rsquo; x 3&amp;rsquo; working area.
+Fortunately, the most inexpensive parts of the machine are the parts that determine it&amp;rsquo;s size.</description>
+    </item>
+    
+    <item>
+      <title>MPCNC Initial Build</title>
+      <link>/projects/mpcnc/mpcnc-initial-build/</link>
+      <pubDate>Wed, 21 Feb 2018 23:18:16 -0400</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-initial-build/</guid>
+      <description>After a few months of going back and forth on this idea, I decided to pull the trigger and build the Mostly Printed CNC (MPCNC). It is a CNC platform that can be assembled out of inexpensive electronics and hardware, EMT conduit, and 3d printed components.
+Ryan at V1 Engineering sells a kit with all the electronics and hardware, leaving me to source a table, conduit, and print the parts. While waiting for the kit to arrive, I started the long process of printing.</description>
+    </item>
+    
+  </channel>
+</rss>

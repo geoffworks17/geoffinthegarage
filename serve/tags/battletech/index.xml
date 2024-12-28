@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Battletech on </title>
+    <link>/tags/battletech/</link>
+    <description>Recent content in Battletech on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 May 2024 18:36:36 -0400</lastBuildDate><atom:link href="/tags/battletech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Battletech Display Terrace Part 2</title>
+      <link>/blog/battletech-display-terrace-pt-2/</link>
+      <pubDate>Sun, 26 May 2024 18:36:36 -0400</pubDate>
+      
+      <guid>/blog/battletech-display-terrace-pt-2/</guid>
+      <description>&lt;p&gt;I didn&amp;rsquo;t think I would be revisiting this project so soon, but the foam was already cut, and I filled up the first terrain piece with my entire collection of painted &amp;lsquo;Mechs. I also remembered to take more in-progress pictures, so there&amp;rsquo;s a bit more detail to the process.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Battletech Display Terrace</title>
+      <link>/blog/battletech-display-terrace/</link>
+      <pubDate>Fri, 24 May 2024 17:24:20 -0400</pubDate>
+      
+      <guid>/blog/battletech-display-terrace/</guid>
+      <description>&lt;p&gt;As my collection of 3d printed and purchased Battletech figures has grown, I needed a better way to display printed pieces. This homemade tiered shelf is what I came up with.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Batch-Converting Video Files with Handbrake and Python - </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Geoff in the Garage" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Geoff in the Garage</div>
+					<div class="logo__tagline">OK, maybe not *every* day...</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/blog/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="https://geoffinthegarage.bigcartel.com/">
+				
+				<span class="menu__text">Shop</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Batch-Converting Video Files with Handbrake and Python</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-08-07T19:35:17Z">Sunday, Aug 7, 2016</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Over the past few years, I have acquired quite a video collection. Hundreds of files have been downloaded or DVDs ripped, resulting in nearly a terabyte of television and movies. I usually use Handbrake to rip files off a DVD, since it has several parameters that can be tweaked to give the ideal video output. I can easily name the file, specify an output format, and even create a queue for getting multiple videos from a disk. Handbrake does a great job with movies, since often it is a single file that needs extracting. TV shows are a bit more cumbersome, due to multiple disks being involved. For this reason, I have developed the following workflow to easily rip TV shows from a DVD set.</p>
+<ol>
+<li>
+<p>I start by using MakeMKV to rip individual episodes from a disk. Its simple interface allows for quick renaming of files, and the extraction process takes a matter of minutes for each disk. I like to use a short, standard naming scheme for the episodes, such as &ldquo;0103&rdquo; for &ldquo;Season 1, Episode 3&rdquo;</p>
+<p><img src="media/makemkvrename1.png?w=193" alt="MakeMKVrename1"></p>
+</li>
+<li>
+<p>After extracting, I quickly skim the videos, making sure I have labeled everything correctly. I haven&rsquo;t encountered any disks that kept the episodes out of order, but sometimes there are special features I want to keep. In this particular case, some of the episodes of Daria had introductions by the characters at the beginning. I&rsquo;ve found the easiest way to skim is with VLC. It has a small footprint when used, and can read just about any file format.</p>
+</li>
+<li>
+<p>Unfortunately, the output files from MakeMKV are huge, usually  around 800 MB for a short, 20 minute video. Using the Handbrake command line interface (CLI) and Python, I wrote a small script that could rename the files and convert them to a smaller file. The comments of the script are pretty clear, but the main gist of the program is to:</p>
+<ol>
+<li>Scan a given directory for files</li>
+<li>Make a list of found files</li>
+<li>Go through the list, converting videos and renaming to fit the naming scheme.</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># This script reads the *.mkv files in a given directory, and uses Handbrake</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># to convert them to a smaller filesize and specific naming scheme.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This script written by Geoffrey Tuttle</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Import necessary modules</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path  <span style="color:#75715e"># manipulates computer directories</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> subprocess <span style="color:#f92672">import</span> call  <span style="color:#75715e"># call(command, shell=True) runs command from cmd</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define locations and show name</span>
+</span></span><span style="display:flex;"><span>input_path <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;C:/Users/geoff_000/Videos/MakeMKV&#39;</span>)  <span style="color:#75715e"># Input directory</span>
+</span></span><span style="display:flex;"><span>output_path <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;E:/Videos/TV/Daria/&#39;</span>)  <span style="color:#75715e"># Output directory</span>
+</span></span><span style="display:flex;"><span>show_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Daria&#39;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create list of files to be converted</span>
+</span></span><span style="display:flex;"><span>handles <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>stem <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> input_path<span style="color:#f92672">.</span>iterdir()]
+</span></span><span style="display:flex;"><span>input_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">geoff_000</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Videos</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">MakeMKV</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>output_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;E:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Videos</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">TV</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Daria</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Iterate through list of video files, converting them using Handbrake</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> old_filename <span style="color:#f92672">in</span> handles:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Create new filename in a readable format for Plex</span>
+</span></span><span style="display:flex;"><span>    new_filename <span style="color:#f92672">=</span> show_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; S</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">E</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(old_filename[:<span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span>                                                old_filename[<span style="color:#ae81ff">2</span>:])
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Create the command for running Handbrake for each path and filename</span>
+</span></span><span style="display:flex;"><span>    command <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;&#34;C:\Program Files\HandbrakeCLI\HandBrakeCLI.exe&#34; -v0 -i &#34;&#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>               input_path <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">.mkv&#34; -o &#34;&#39;</span><span style="color:#f92672">.</span>format(old_filename) <span style="color:#f92672">+</span> output_path <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">.mp4&#34; --preset=&#34;Normal&#34;&#39;</span><span style="color:#f92672">.</span>format(new_filename))
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    print(old_filename <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; conversion started&#39;</span>)
+</span></span><span style="display:flex;"><span>    call(command, shell<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    print(new_filename <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; converted&#39;</span>)</span></span></code></pre></div>
+<p>I had just finished up the script and ran a short test when Windows gave me an “Imminent Hard Drive Failure” warning for my Media drive. Instead of taking a chance to going ahead with running this script, I powered down the computer, hopped on my laptop, and ordered a replacement drive so I can back up everything.</p>
+<p>Once the drive arrives and I have copied everything. I will continue with running the script and post a short update to this post.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/programming/" rel="tag">Programming</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/blog/ikea-lamp-to-camera-mount/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Ikea Lamp to Camera Mount</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/blog/google-home-mini-wall-mount/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Google Home Mini Wall Mount</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/geoffworks17" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="YouTube"  rel="noopener noreferrer" href="https://youtube.com/c/geoffworks17" target="_blank">
+					<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="youtube.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="0 0 384 374"
+   height="24"
+   width="24"
+   class="widget-social__link-icon  icon">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     showguides="false"
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:cy="12"
+     inkscape:cx="12"
+     inkscape:zoom="42"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="2080"
+     inkscape:window-width="3840"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:60.4723"
+     id="path2"
+     fill="#ffffff"
+     d="M 146.30566,311.1838 C 89.713787,309.97435 50.934056,306.92292 38.712799,302.71811 24.384991,297.78866 12.673995,285.76151 8.2619073,271.44526 -0.17501416,244.06924 -2.6466196,166.85265 3.170545,112.38332 6.2647626,83.410473 10.14127,72.984254 21.933402,61.918892 29.649619,54.678233 37.418646,51.09572 49.617087,49.153171 91.447611,42.491849 225.37148,40.873994 301.74679,46.107368 c 39.23234,2.688231 50.21728,5.788642 61.8988,17.470071 8.15737,8.157313 11.85096,16.065295 14.66051,31.387971 8.33057,45.43333 7.35575,136.84729 -1.84803,173.28972 -4.31411,17.08184 -15.57746,29.50053 -31.64989,34.89629 -15.66161,5.25805 -77.54865,8.53462 -156.43876,8.28306 -19.61121,-0.0605 -38.53993,-0.17537 -42.06382,-0.24794 z m 57.71837,-105.06256 c 27.35151,-15.70421 49.55977,-28.71988 49.35167,-28.92361 -0.51825,-0.50797 -97.88447,-56.66664 -98.96406,-57.08094 -0.77605,-0.29631 -0.86319,5.46729 -0.86319,57.11323 0,31.59443 0.16751,57.44443 0.37251,57.44443 0.20501,0 22.7513,-12.8489 50.10282,-28.55311 z" />
+</svg>
+
+				<span>YouTube</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/3d-printing/" title="3d Printing">3d Printing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/action-figures/" title="Action Figures">Action Figures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/battletech/" title="Battletech">Battletech</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cameras/" title="Cameras">Cameras</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/car/" title="Car">Car</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/casting/" title="Casting">Casting</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cnc/" title="CNC">CNC</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cosplay/" title="Cosplay">Cosplay</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/fusion360/" title="Fusion360">Fusion360</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/laser/" title="Laser">Laser</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mpcnc/" title="MPCNC">MPCNC</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/optics/" title="Optics">Optics</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/painting/" title="Painting">Painting</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/portfolio/" title="Portfolio">Portfolio</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/programming/" title="Programming">Programming</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/resin/" title="Resin">Resin</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/space/" title="Space">Space</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/stickers/" title="Stickers">Stickers</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tabletop/" title="Tabletop">Tabletop</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/terrain/" title="Terrain">Terrain</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/walking/" title="Walking">Walking</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 .
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

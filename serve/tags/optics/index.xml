@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optics on </title>
+    <link>/tags/optics/</link>
+    <description>Recent content in Optics on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Dec 2020 12:18:38 -0500</lastBuildDate><atom:link href="/tags/optics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webcam Lens Modification</title>
+      <link>/blog/20-12-webcam-mod/</link>
+      <pubDate>Tue, 15 Dec 2020 12:18:38 -0500</pubDate>
+      
+      <guid>/blog/20-12-webcam-mod/</guid>
+      <description>&lt;p&gt;With the current state of mass telework and increased social distancing, finding new ways to connect with others over shared projects has become a necessary endeavor. This has lead me to upgrade my webcams, and use &lt;a href=&#34;https://obsproject.com/&#34;&gt;OBS&lt;/a&gt; to create a streaming setup to show-and-tell what I have been tinkering with.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laser Engraver Testing</title>
+      <link>/projects/mpcnc/mpcnc-laser-engraver-testing/</link>
+      <pubDate>Mon, 11 Feb 2019 16:31:59 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-laser-engraver-testing/</guid>
+      <description>With the laser up and running, I wanted to try and dial in the settings to get good engravings and cut through some material. Most laser cutters are of the CO2 variety, which operate an order of magnitude faster than the MPCNC, and with two orders of magnitude more power.
+There are lots of forum posts about setups similar to mine, but no two machines are alike, so I had to figure out my own parameters.</description>
+    </item>
+    
+  </channel>
+</rss>

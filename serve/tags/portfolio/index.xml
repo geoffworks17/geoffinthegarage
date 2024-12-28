@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio on </title>
+    <link>/tags/portfolio/</link>
+    <description>Recent content in Portfolio on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Dec 2020 12:18:38 -0500</lastBuildDate><atom:link href="/tags/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webcam Lens Modification</title>
+      <link>/blog/20-12-webcam-mod/</link>
+      <pubDate>Tue, 15 Dec 2020 12:18:38 -0500</pubDate>
+      
+      <guid>/blog/20-12-webcam-mod/</guid>
+      <description>&lt;p&gt;With the current state of mass telework and increased social distancing, finding new ways to connect with others over shared projects has become a necessary endeavor. This has lead me to upgrade my webcams, and use &lt;a href=&#34;https://obsproject.com/&#34;&gt;OBS&lt;/a&gt; to create a streaming setup to show-and-tell what I have been tinkering with.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Image Scaling With Python</title>
+      <link>/blog/hugo-image-scaling-with-python/</link>
+      <pubDate>Tue, 29 Sep 2020 00:55:33 -0400</pubDate>
+      
+      <guid>/blog/hugo-image-scaling-with-python/</guid>
+      <description>This blog is built using Hugo, a static website generator designed for quick build times and easy deployment. A static website requires no server backend, since everything is delivered in a static state to the reader (that&amp;rsquo;s you!). All code is executed on the client machine. I love the lightweight simplicity of a static website, which brings up some nostalgia for the internet of the mid to late 90s, when these types of pages were the norm.</description>
+    </item>
+    
+    <item>
+      <title>Two Part Mold Making</title>
+      <link>/blog/two-part-mold-making/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/two-part-mold-making/</guid>
+      <description>Today, we&amp;rsquo;re going to take a 3d printed tabletop miniature and replicate it with a two part mold. This will speed of production of a part that would normally take two to three hours, and give us the freedom of different materials and colors.
+Two part molds allow us to cast more complex shapes than a one part, or open-face, mold. This open face creates a flat surface on the piece we are making.</description>
+    </item>
+    
+    <item>
+      <title>Needle Cutter Rebuild</title>
+      <link>/projects/mpcnc/mpcnc-rebuild-with-needle-cutter/</link>
+      <pubDate>Mon, 17 Feb 2020 16:36:06 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-rebuild-with-needle-cutter/</guid>
+      <description>&lt;p&gt;After a hiatus, I decided to revisit the needle cutter and get back to making planes from the free svg plans on FliteTest. I wanted to characterize the performance of the MPCNC and develop a streamlined workflow for creating parts that would fit together snug without being too tight.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Laser Engraver Testing</title>
+      <link>/projects/mpcnc/mpcnc-laser-engraver-testing/</link>
+      <pubDate>Mon, 11 Feb 2019 16:31:59 -0500</pubDate>
+      
+      <guid>/projects/mpcnc/mpcnc-laser-engraver-testing/</guid>
+      <description>With the laser up and running, I wanted to try and dial in the settings to get good engravings and cut through some material. Most laser cutters are of the CO2 variety, which operate an order of magnitude faster than the MPCNC, and with two orders of magnitude more power.
+There are lots of forum posts about setups similar to mine, but no two machines are alike, so I had to figure out my own parameters.</description>
+    </item>
+    
+    <item>
+      <title>CT Scan to STL</title>
+      <link>/blog/ct-scan-to-stl/</link>
+      <pubDate>Sat, 27 Feb 2016 12:15:24 +0000</pubDate>
+      
+      <guid>/blog/ct-scan-to-stl/</guid>
+      <description>Recently, I have been reading on 3d printing in the medical field. The ability to go beyond a screen allows for visualization and practice of surgery without the patient having to go under the knife. A friend was kind enough to get me a copy of her recent CT scan data so I could attempt to get a 3d-printable object out of it. Using the guide found here, I had little trouble extracting the data, generating a model, and exporting it to an STL file.</description>
+    </item>
+    
+  </channel>
+</rss>

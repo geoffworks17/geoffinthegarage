@@ -1,83 +1,71 @@
 baseurl = "/"
 languageCode = "en-us"
-# Add it only if you keep the theme in the `themes` directory.
-# Remove it if you use the theme as a remote Hugo Module.
-theme = "hello-friend"
-paginate = 10
+theme = "mainroad"
+paginate = 10 # Number of posts per page
+pluralizeListTitles = false
 
-[params]
-  # dir name of your blog content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "blog"
-
-  # OS theme is default when not provided, but you can force it to "light" or "dark"
-  defaultTheme = ""
-
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 5
-
-  # Show reading time in minutes for posts
-  showReadingTime = false
-
-  # Show table of contents at the top of your posts (defaults to false)
-  # Alternatively, add this param to post front matter for specific posts
-  # toc = true
-
-  # Show full page content in RSS feed items
-  #(default is Description or Summary metadata in the front matter)
-  rssFullText = true
-
-  [taxonomies]
-	  tag = "tags"
-	  category = "categories"
-    project = "projects"
-
-
-[outputs]
-  home = ["HTML", "RSS"]
-
-[languages]
-  [languages.en]
+[Params.logo]
     title = "Geoff in the Garage"
-    subtitle = ""
-    keywords = ""
-    copyright = ""
-    menuMore = "Show more"
-    writtenBy = ""
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    minuteReadingTime = "min read"
-    dateFormatSingle = "2006-01-02"
-    dateFormatList = "2006-01-02"
-    # leave empty to disable, enter display text to enable
-    # lastModDisplay = ""
+    subtitle = "OK, maybe not *every* day..."
 
-    [languages.en.params.logo]
-      logoText = "Geoff in the Garage"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+[Params]
+    mainSections = ["blog", "projects"]
+    post_meta = ["date"]
+    dateformat = "Monday, Jan 2, 2006"
+    pager = true
+    readmore = false
 
-    [languages.en.menu]
-      [[languages.en.menu.main]]
+[Params.style.vars]
+    highlightColor = "#05af41"
+
+[Params.sidebar]
+    home = "right"
+    list = "right"
+    single = "right"
+    widgets = ["social", "taglist"]
+
+[Params.widgets]
+    recent_num = 5
+    tags_counter = false
+
+[Params.widgets.social]
+    github = "geoffworks17"
+
+[[Params.widgets.social.custom]]
+  title = "YouTube"
+  url = "https://youtube.com/c/geoffworks17"
+  icon = "svg/youtube.svg" # Optional. Path relative to "layouts/partials"
+
+[menu]
+    [[menu.main]]
         identifier = "projects"
         name = "Projects"
-        url = "/projects"
+        url = "/projects/"
+        #layout = "list"
+        weight = 3
+
+    [[menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
         weight = 1
-      [[languages.en.menu.main]]
+
+    [[menu.main]]
+        identifier = "post"
+        name = "Blog"
+        url = "/blog/"
+        weight = 2
+
+    [[menu.main]]
+        identifier = "shop"
+        name = "Shop"
+        url = "https://geoffinthegarage.bigcartel.com/"
+        weight = 4
+
+    [[menu.main]]
         identifier = "about"
         name = "About"
-        url = "/about"
-      [[languages.en.menu.main]]
-        identifier = "archive"
-        name = "Archive"
-        url = "/archive"
-        weight =2
-      [[languages.en.menu.main]]
-        identifier = "rss"
-        name = "RSS"
-        url = "/index.xml"
+        url = "/about/"
+        weight = 5
+
+    [[menu.side]]
