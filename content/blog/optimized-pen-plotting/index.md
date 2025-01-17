@@ -1,6 +1,6 @@
 ---
 title: "Optimized Pen Plotting"
-date: 2025-01-15T07:00:34-05:00
+date: 2025-01-17T07:00:34-05:00
 thumbnail:
     src: "/blog/optimized-pen-plotting/media/second pen.JPEG"
     visibility:
@@ -10,7 +10,7 @@ categories:
 tags:
     - "python"
     - "programming"
-draft: true
+draft: false
 ---
 My last pen plotter adventure resulted in a simple method to generate a 2d plot in python, export that as an svg, then translate that svg into something readable by my pen plotter. For my next trick, I aimed to optimize the process of exporting multiple colors.
 
