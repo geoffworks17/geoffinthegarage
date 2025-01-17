@@ -25,7 +25,7 @@ The workflow from start to finish is as follows:
 3. Generate a gcode file for my plotter using the vpype-gcode plugin 
 
 ## Creating a plot
-First, a plot was created using matplotlib to handle the figures, and numpy for access to math and array operations.
+First, a plot was created using matplotlib to handle the figures, and numpy for access to math and array operations. (Plot copied from [here](https://stackoverflow.com/questions/22566692/how-to-plot-graph-sine-wave))
 
 
 ```python
