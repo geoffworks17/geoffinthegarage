@@ -61,4 +61,4 @@ I would have assumed the kerf setting would be the same between both parts and h
 ![Fun Stuff](media/02mrwnc08.jpg)
 
 For a quick demo of the needle cutter in action, check out the video below:
-{{< youtube yDkm5kARPws>}}<p></p>
+{{< youtube yDkm5kARPws>}}

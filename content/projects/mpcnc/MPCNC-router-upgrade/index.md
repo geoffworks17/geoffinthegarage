@@ -15,6 +15,8 @@ draft: false
 
 After a few years of rebuilds, teardowns, and tool changes, I am finally adding a router to my MPCNC. I have been wanting to work more with sheet material like wood, acrylic, and even aluminum if I can get the hang of using this tool.
 
+<!--more-->
+
 ## Router Choice and Prints
 
 For a router, V1 Engineering recommend the Dewalt 660, a 5.0 Amp, handheld rotary tool that operates at 30,000 rpm with an included 1/8" collet. This seemed like a solid choice, but I could not find it in my local stores or on Amazon. This led me to get the 7.0 Amp Dewalt 611, which is larger, has a variable speed from 16,000 to 30,000 rpm, and includes a 1/4" collet. Even though I had to purchase a separate 1/8" collet to fit the end mills I would be using, it was a much better choice. The variable speed will allow me to dial in on what is best for the material, and the higher amperage will give it a bit more punch when working with harder materials.

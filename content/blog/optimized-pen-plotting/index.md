@@ -129,7 +129,6 @@ The simple test worked well enough, but I was starting to get tired of this simp
 
 ![3d plot](media/output_13_0.png#center)
 
-{{< details summary="Expand to see the code for the 3d plot" >}}
 ```python
 import matplotlib.pyplot as plt
 
@@ -153,7 +152,6 @@ plt.savefig('media/3dmesh.svg', transparent=True)
 plt.show()
 
 ```
-{{< /details >}}
 
 When I tried passing this plot through vpype for sorting and conversion to gcode, I received an error regarding "empty lists". After some digging around, it turns out the exported svg contained some empty objects where the axes would have rendered (had I turned them on). I could not figure out how to prevent these objects from being exported, so I manually deleted them before sorting and exporting to gcode.
 

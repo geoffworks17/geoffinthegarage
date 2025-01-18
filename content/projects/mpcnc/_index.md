@@ -1,4 +1,5 @@
----
-title: "Mostly Printed CNC"
----
-Front Matter for MPCNC projects
+# Mostly Printed CNC
+
+The Mostly Printed CNC (MPCNC) is an entry level DIY kit for a small CNC milling machine developed by Ryan at [V1Engineering](https://www.v1engineering.com/). This well-documented project is supported by a huge community of tinkerers, hobbyists, and professional machinists who have contributed a multitude of add-ons to the machine.
+
+This is a record of work performed and milestones reached on building my own MPCNC. If you want to see this journey from the beginning, [start here](/projects/mpcnc/initial-build/), and follow the links after each page.

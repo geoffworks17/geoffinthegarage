@@ -1,6 +1,9 @@
 ---
 title: MPCNC
-#thumbnail: "img/18/02-MPCNC-Initial-Build/thumb.jpg"
+thumbnail:
+  src: "/projects/mpcnc/mpcnc-initial-build/media/thumb.jpg"
+  visibility:
+    - list
 slug: /mpcnc/
 date: 2018-02-21T23:18:16-04:00
 weight: 1

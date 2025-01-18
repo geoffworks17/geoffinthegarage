@@ -15,6 +15,8 @@ draft: false
 
 Now that the MPCNC is assembled and wired up, it's time to make something! I decided to start with some simple actions with a pen plotter and vinyl cutter.
 
+<!--more-->
+
 ## Pen plotting
 ![Test plotting](media/06mpavc01.jpg)
 
