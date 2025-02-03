@@ -6,7 +6,7 @@ pluralizeListTitles = false
 
 [Params.logo]
     title = "Geoff in the Garage"
-    subtitle = "OK, maybe not *every* day..."
+    subtitle = "Projects, Ideas, and Other Endeavors"
 
 [Params]
     mainSections = ["blog", "projects"]
