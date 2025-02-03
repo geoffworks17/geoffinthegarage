@@ -10,7 +10,6 @@ pluralizeListTitles = false
 
 [Params]
     mainSections = ["blog", "projects"]
-    post_meta = ["date"]
     dateformat = "Monday, Jan 2, 2006"
     pager = true
     readmore = false
@@ -67,6 +66,12 @@ pluralizeListTitles = false
         identifier = "about"
         name = "About"
         url = "/about/"
+        weight = 5
+
+    [[menu.main]]
+        identifier = "portfolio"
+        name = "Portfolio"
+        url = "/tags/portfolio/"
         weight = 5
 
     [[menu.side]]
