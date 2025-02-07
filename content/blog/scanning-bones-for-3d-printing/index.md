@@ -4,7 +4,7 @@ date: Wed, 29 Jun 2016 13:04:48 +0000
 draft: false
 categories:
     - "Projects"
-tags: ['3D Printing', 'Portfolio']
+tags: ['3D Printing']
 thumbnail: 
     src: "/blog/scanning-bones-for-3d-printing/media/2016-06-28-13-42-45-header.jpg"
     visibility:
