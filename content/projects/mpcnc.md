@@ -4,7 +4,7 @@ thumbnail:
   src: "/projects/mpcnc/mpcnc-initial-build/media/thumb.jpg"
   visibility:
     - list
-#slug: /mpcnc/
+slug: /mpcnc/
 date: 2018-02-21T23:18:16-04:00
 weight: 1
 type: section
