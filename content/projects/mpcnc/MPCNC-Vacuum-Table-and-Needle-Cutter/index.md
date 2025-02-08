@@ -10,7 +10,7 @@ tags:
   - "MPCNC"
   - "RC Planes"
 
-draft: true
+draft: false
 ---
 
 In my pursuit of speeding up my RC plane building, I found a new tool on the Flite Test forums, a needle cutter. This is a simple tool where a flexible piece of music wire is attached to a brushless motor to repeatedly puncture soft materials. When these punctures are spaced close enough, it acts as a cutting tool.
